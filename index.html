@@ -42,13 +42,13 @@
             border: 1px solid #e2ddd4;
             border-radius: 4px;
             padding: 3rem 2.5rem 2.5rem;
+            /* 替换旧的阴影和 outline，用一层特殊的 shadow 完美模拟双边框 */
             box-shadow:
+                0 0 0 4px #fffdf9,         /* 模拟 4px 的白色间隙 */
+                0 0 0 5px #f0ece4,         /* 模拟原先 1px 的外边框 */
                 0 1px 2px rgba(0,0,0,0.04),
                 0 4px 16px rgba(0,0,0,0.05),
                 0 12px 40px rgba(0,0,0,0.04);
-            /* Double-line border via outline */
-            outline: 1px solid #f0ece4;
-            outline-offset: 4px;
             animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         @keyframes fadeUp {
