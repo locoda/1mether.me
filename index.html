@@ -1,99 +1,200 @@
-<!DOCTYPE HTML>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>He "Linda" Huang</title>
-		<link rel="shortcut icon" href="favicon.ico" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-loading">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>He "Linda" Huang</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-weight: 400;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            /* Paper-like background: warm tone + faint horizontal lines */
+            background-color: #f7f5f0;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 7px,
+                    rgba(0,0,0,0.025) 7px,
+                    rgba(0,0,0,0.025) 8px
+                );
+        }
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-							<h1>He "Linda" Huang</h1>
-							<p>Software Engineer @ Facebook</p>
-						</header>
-						<!--
-						<hr />
-							<h2>Check My Resume <u><a href="resume.pdf">Here</a></u>!</h2>
-						<hr />
-						<hr />
-						<h2>Extra Stuff!</h2>
-						<form method="post" action="#">
-							<div class="field">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<div class="select-wrapper">
-									<select name="department" id="department">
-										<option value="">Department</option>
-										<option value="sales">Sales</option>
-										<option value="tech">Tech Support</option>
-										<option value="null">/dev/null</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
-							</div>
-							<div class="field">
-								<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
-							</div>
-							<div class="field">
-								<label>But are you a robot?</label>
-								<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
-								<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
-							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Get Started</a></li>
-							</ul>
-						</form>
-						<hr />
-						-->
-						<footer>
-							<ul class="icons">
-								<li><a href="https://blog.1mether.me/" class="fa-book">Blog</a></li>
-								<li><a href="https://www.linkedin.com/in/locoda/" class="fa-linkedin">LinkedIn</a></li>
-								<li><a href="https://github.com/locoda" class="fa-github">Github</a></li>
-								<li><a href="mailto:hhuang1206@gmail.com" class="fa-envelope">Mail Me</a></li>
-							</ul>
-						</footer>
-					</section>
+        /* ── Card container ── */
+        .card {
+            max-width: 420px;
+            width: 100%;
+            background: #fffdf9;
+            border: 1px solid #e2ddd4;
+            border-radius: 4px;
+            padding: 3rem 2.5rem 2.5rem;
+            box-shadow:
+                0 1px 2px rgba(0,0,0,0.04),
+                0 4px 16px rgba(0,0,0,0.05),
+                0 12px 40px rgba(0,0,0,0.04);
+            /* Double-line border via outline */
+            outline: 1px solid #f0ece4;
+            outline-offset: 4px;
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; He Huang</li>
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-			</div>
-		<!-- Scripts -->
-			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
+        /* ── Avatar ── */
+        .avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2.25rem;
+        }
 
-	</body>
+        /* ── Name ── */
+        .name {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-weight: 700;
+            font-size: 2.75rem;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            color: #141414;
+            margin-bottom: 0.65rem;
+        }
+        .name em {
+            font-style: italic;
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* ── Title ── */
+        .title {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #999;
+            letter-spacing: 0.3px;
+            margin-bottom: 2.25rem;
+        }
+
+        /* ── Separator ── */
+        .sep {
+            width: 28px;
+            height: 2px;
+            background: #d9d4cb;
+            margin-bottom: 2.25rem;
+        }
+
+        /* ── Social links ── */
+        .links {
+            display: flex;
+            gap: 1.1rem;
+            flex-wrap: wrap;
+        }
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #999;
+            background: transparent;
+            border: 1px solid #e2ddd4;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .links a svg {
+            width: 17px;
+            height: 17px;
+        }
+        .links a:hover {
+            color: #141414;
+            border-color: #999;
+            transform: translateY(-2px);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 2.25rem;
+            font-size: 0.68rem;
+            color: #c4bfb5;
+        }
+        .footer a {
+            color: #c4bfb5;
+            text-decoration: none;
+            border-bottom: 1px solid #e8e4db;
+            transition: all 0.2s;
+        }
+        .footer a:hover {
+            color: #666;
+            border-bottom-color: #999;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            body { padding: 1.25rem; }
+            .card {
+                padding: 2.25rem 1.5rem 1.75rem;
+                outline-offset: 3px;
+            }
+            .name { font-size: 2.1rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card { animation: none; }
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <img class="avatar" src="images/avatar.jpg" alt="He Huang" />
+
+        <h1 class="name">He <em>"Linda"</em><br>Huang</h1>
+
+        <p class="title">Software Engineer</p>
+
+        <div class="sep" aria-hidden="true"></div>
+
+        <nav class="links" aria-label="Social links">
+            <a href="https://blog.1mether.me/" target="_blank" rel="noopener" aria-label="Blog" title="Blog">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    <polyline points="8,7 12,7"/><polyline points="8,11 14,11"/><polyline points="8,15 11,15"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/locoda/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/locoda" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="mailto:hhuang1206@gmail.com" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
+        </nav>
+
+        <p class="footer">
+            &copy; 2026 He Huang &nbsp;&middot;&nbsp; <a href="resume.pdf" target="_blank">Résumé</a>
+        </p>
+    </main>
+</body>
 </html>
