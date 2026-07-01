@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>乙醚 · 一点点关于我</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Quicksand:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg1: #F1EEE6;
+  --bg2: #E6EBE3;
+  --card: #FFFDF9;
+  --card-dim: #F5F3EC;
+  --ink: #3B3833;
+  --line: #E7E2D5;
+  --blue: #7C93B8;
+  --sage: #8FAE94;
+  --coral: #E0916D;
+  --muted: #9c968a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%);
+  color: var(--ink);
+  font-family: 'Noto Sans SC', 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
+}
+
+/* ---------- sparkle divider ---------- */
+.barcode {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin: 30px 0;
+  font-size:16px;
+  color: var(--blue);
+  opacity:0.8;
+}
+.barcode span:nth-child(2n) { color: var(--coral); }
+.barcode span { display:block; }
+
+/* ---------- hero ticket ---------- */
+.hero {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 26px;
+  position: relative;
+  overflow:hidden;
+  box-shadow: 0 24px 50px -18px rgba(183,156,237,0.45);
+  border: 2px solid #fff;
+}
+
+.hero-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 18px 22px 0 22px;
+  font-family:'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--coral);
+  text-transform:uppercase;
+}
+
+.hero-main {
+  display:flex;
+  gap: 22px;
+  align-items:center;
+  padding: 18px 22px 22px 22px;
+}
+
+.avatar {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  overflow:hidden;
+  flex-shrink:0;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px var(--coral);
+}
+.avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.hero-id .name {
+  font-family:'Noto Sans SC', sans-serif;
+  font-weight:900;
+  font-size: 42px;
+  line-height:1;
+  color: var(--ink);
+}
+.hero-id .role {
+  margin-top:8px;
+  font-family:'DM Mono', monospace;
+  font-size: 12.5px;
+  color: var(--blue);
+  letter-spacing:0.5px;
+}
+
+.tear {
+  position:relative;
+  height:0;
+  border-top: 2px dashed var(--line);
+  margin: 0 0;
+}
+.tear::before, .tear::after {
+  content:"";
+  position:absolute;
+  top:-11px;
+  width:22px; height:22px;
+  border-radius:50%;
+  background: var(--bg2);
+}
+.tear::before { left:-31px; }
+.tear::after { right:-31px; }
+
+.hero-bio {
+  padding: 22px 22px 26px 22px;
+  font-size: 16px;
+  line-height:1.9;
+}
+
+.hero-bio .flags { letter-spacing:2px; }
+
+.hero-tags {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.hero-tags span {
+  font-family:'DM Mono', monospace;
+  font-size:12px;
+  background: var(--card-dim);
+  border: 1.5px solid var(--coral);
+  border-radius: 999px;
+  padding: 4px 12px;
+  color: var(--ink);
+}
+
+/* ---------- section heading ---------- */
+.section-head {
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin: 52px 0 16px 0;
+}
+.section-head .num { display:none; }
+.section-head h2 {
+  font-family:'Outfit', sans-serif;
+  font-weight:600;
+  font-size: 24px;
+  letter-spacing:0.2px;
+  color: var(--ink);
+}
+.section-head .cjk {
+  font-family:'Noto Sans SC', sans-serif;
+  font-weight:900;
+  font-size:22px;
+  color: var(--ink);
+}
+.section-sub {
+  font-family:'Quicksand', sans-serif;
+  font-weight:500;
+  font-size:14px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* ---------- ticket links ---------- */
+.ticket-link {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background: var(--card);
+  border:2px solid var(--line);
+  border-radius:18px;
+  padding:16px 18px;
+  margin-bottom:12px;
+  text-decoration:none;
+  color:inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.ticket-link:hover { border-color: var(--coral); transform: translateX(2px); }
+.ticket-link:focus-visible { outline: 2px solid var(--blue); outline-offset:2px; }
+
+.tl-code {
+  font-family:'DM Mono', monospace;
+  font-size:12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--coral), var(--blue));
+  border-radius:10px;
+  width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.tl-body { display:flex; flex-direction:column; gap:3px; flex:1; min-width:0; }
+.tl-name { font-weight:700; font-size:16px; color:var(--ink); }
+.tl-desc { font-size:13px; color: var(--muted); }
+.tl-arrow { color: var(--coral); font-family:'DM Mono', monospace; }
+
+/* ---------- oshi badges ---------- */
+.badges {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+.badge {
+  background: linear-gradient(155deg, var(--card), var(--card-dim));
+  border:2px solid var(--line);
+  border-radius:20px;
+  padding:12px 12px 16px 12px;
+  color: var(--ink);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  position:relative;
+}
+.badge-photo {
+  width:100%;
+  aspect-ratio: 1 / 1;
+  border-radius:14px;
+  object-fit:cover;
+  border:2px solid #fff;
+  box-shadow: 0 0 0 2px var(--line);
+}
+.badge-text { display:flex; flex-direction:column; gap:3px; min-width:0; text-align:center; }
+.badge-group { font-weight:700; font-size:15px; }
+.badge-person { font-family:'DM Mono', monospace; font-size:12px; color: var(--blue); }
+
+.oshi-extra {
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.9;
+  color: var(--muted);
+}
+.oshi-extra b { color: var(--ink); font-weight:600; }
+
+/* ---------- logs / accordions ---------- */
+details.log {
+  background: var(--card);
+  border:2px solid var(--line);
+  border-radius:18px;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+details.log summary {
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+  font-weight:700;
+  font-size:16px;
+  color: var(--ink);
+}
+details.log summary::-webkit-details-marker { display:none; }
+.log-count {
+  font-family:'DM Mono', monospace;
+  font-size:12px;
+  color: #fff;
+  background: var(--sage);
+  border-radius:999px;
+  padding:4px 12px;
+  margin-left:10px;
+}
+.log-meta { display:flex; align-items:center; }
+.chev {
+  font-family:'DM Mono', monospace;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+details[open] .chev { transform: rotate(90deg); }
+
+.log-rows {
+  border-top: 2px dashed var(--line);
+  padding: 6px 20px 14px 20px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+.row {
+  display:flex;
+  gap:12px;
+  align-items:baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size:14px;
+}
+.row:last-child { border-bottom:none; }
+.row-date {
+  font-family:'DM Mono', monospace;
+  color: var(--coral);
+  font-size:12px;
+  flex-shrink:0;
+  width: 108px;
+}
+.row-title { font-weight:600; flex:1; min-width:0; color: var(--ink); }
+.row-venue { color: var(--muted); font-size:12.5px; text-align:right; flex-shrink:0; }
+
+/* ---------- posters ---------- */
+.posters {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+}
+.poster {
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio: 1 / 1;
+  background: var(--card);
+  border:2px solid var(--line);
+}
+.poster img { width:100%; height:100%; object-fit:cover; display:block; }
+.poster-label {
+  position:absolute; left:0; right:0; bottom:0;
+  background: linear-gradient(to top, rgba(30,20,35,0.82), transparent);
+  color:#fff;
+  font-size:11.5px;
+  padding: 18px 8px 8px 8px;
+  font-weight:600;
+}
+.poster-placeholder {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px;
+  text-align:center;
+}
+.poster-placeholder .poster-label {
+  background:none;
+  position:static;
+  padding:0;
+  color: inherit;
+}
+.poster-placeholder-title { display:none; }
+.poster-placeholder.tone-blue { background: linear-gradient(155deg, #E4EAF3, #D6DFEE); }
+.poster-placeholder.tone-coral { background: linear-gradient(155deg, #F6E4DA, #F0D4C4); }
+.poster-placeholder.tone-sage { background: linear-gradient(155deg, #E6EEE4, #D8E4D5); }
+.poster-placeholder .poster-label { color: var(--ink); }
+
+/* ---------- footer ---------- */
+.footer {
+  margin-top:60px;
+  text-align:center;
+  padding-top: 30px;
+  border-top: 2px dashed var(--line);
+}
+.footer p {
+  font-size:15px;
+  line-height:1.8;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.footer .stamp {
+  display:inline-block;
+  font-family:'DM Mono', monospace;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color: var(--blue);
+  background: var(--card);
+  border:1.5px solid var(--coral);
+  border-radius:999px;
+  padding:6px 16px;
+}
+
+
+a { color: var(--blue); }
+
+@media (max-width:420px) {
+  .hero-id .name { font-size:32px; }
+  .badges { grid-template-columns: 1fr; }
+  .row-venue { display:none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO TICKET -->
+  <div class="hero">
+    <div class="hero-top">
+      <span>🎫 入场券</span>
+      <span>NO. 1METHER</span>
+    </div>
+    <div class="hero-main">
+      <div class="avatar">
+        <img src="../images/avatar.jpg" alt="乙醚">
+      </div>
+      <div class="hero-id">
+        <div class="name">乙醚</div>
+        <div class="role">GENERAL ADMISSION · 普通网友</div>
+      </div>
+    </div>
+    <div class="tear"></div>
+    <div class="hero-bio">
+      <div class="flags">你好！叫我乙醚就好！🇨🇳 → 🇺🇸</div>
+      <div class="hero-tags">
+        <span>INFP</span>
+        <span>程序员</span>
+        <span>同人女</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="barcode">
+    <span>·</span><span>✦</span><span>·</span><span>✧</span><span>·</span><span>✦</span><span>·</span>
+  </div>
+
+  <!-- SOCIAL LINKS -->
+  <div class="section-head"><h2 class="cjk">💌 主要社媒</h2></div>
+  <a class="ticket-link" href="https://weibo.com/u/1864422312" target="_blank" rel="noopener">
+      <span class="tl-code">WB</span>
+      <span class="tl-body">
+        <span class="tl-name">微博</span>
+        <span class="tl-desc">互fo私信我一下喔 w</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+<a class="ticket-link" href="https://www.threads.com/@1mether" target="_blank" rel="noopener">
+      <span class="tl-code">TH</span>
+      <span class="tl-body">
+        <span class="tl-name">Threads</span>
+        <span class="tl-desc">废文中转站</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+<a class="ticket-link" href="https://t.me/ethersdaily" target="_blank" rel="noopener">
+      <span class="tl-code">TG</span>
+      <span class="tl-body">
+        <span class="tl-name">Telegram</span>
+        <span class="tl-desc">比废文更琐碎的日常</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+<a class="ticket-link" href="https://blog.1mether.me/" target="_blank" rel="noopener">
+      <span class="tl-code">BLOG</span>
+      <span class="tl-body">
+        <span class="tl-name">博客</span>
+        <span class="tl-desc">长草了 T T</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+<a class="ticket-link" href="https://pome.vip/enj6M7Xe" target="_blank" rel="noopener">
+      <span class="tl-code">QA</span>
+      <span class="tl-body">
+        <span class="tl-name">提问箱</span>
+        <span class="tl-desc">欢迎留言！</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+
+  <!-- OSHI -->
+  <div class="section-head"><h2 class="cjk">✨ 推し是星星</h2></div>
+  <div class="section-sub">是跨越千里也要去见的人</div>
+  <div class="badges">
+    <div class="badge">
+      <img class="badge-photo" src="../images/oshi-taiki.jpg" alt="佐藤大树">
+      <span class="badge-text">
+        <span class="badge-group">佐藤大树</span>
+        <span class="badge-person">EXILE / FANTASTICS</span>
+      </span>
+    </div>
+<div class="badge">
+      <img class="badge-photo" src="../images/oshi-milet.jpg" alt="milet">
+      <span class="badge-text">
+        <span class="badge-group">milet</span>
+        
+      </span>
+    </div>
+<div class="badge">
+      <img class="badge-photo" src="../images/oshi-skno.jpg" alt="SEKAI NO OWARI">
+      <span class="badge-text">
+        <span class="badge-group">SEKAI NO OWARI</span>
+        
+      </span>
+    </div>
+<div class="badge">
+      <img class="badge-photo" src="../images/oshi-yamamoto.jpg" alt="山本由伸">
+      <span class="badge-text">
+        <span class="badge-group">山本由伸</span>
+        <span class="badge-person">LA Dodgers</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- LOGS -->
+  <div class="section-head"><h2 class="cjk">🎟️ 参战记录</h2></div>
+  <div class="section-sub">感受奇迹的瞬间</div>
+
+  <details class="log">
+    <summary>
+      <span class="log-meta">演唱会<span class="log-count">31</span></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="log-rows">
+      <div class="row">
+      <span class="row-date">2023.03.02</span>
+      <span class="row-title">林宥嘉</span>
+      <span class="row-venue">San Jose Center for the Performing Arts</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.04.16</span>
+      <span class="row-title">RADWIMPS</span>
+      <span class="row-venue">San Jose Civic</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.06.13</span>
+      <span class="row-title">TWICE</span>
+      <span class="row-venue">Oakland Arena</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.08.05–06</span>
+      <span class="row-title">HITC</span>
+      <span class="row-venue">Rose Bowl</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.10.28</span>
+      <span class="row-title">milet</span>
+      <span class="row-venue">広島文化学園HBGホール</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.11.20</span>
+      <span class="row-title">Everglow</span>
+      <span class="row-venue">The Warfield San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.03.16</span>
+      <span class="row-title">IVE</span>
+      <span class="row-venue">Oakland Arena</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.03.29</span>
+      <span class="row-title">Ado</span>
+      <span class="row-venue">Peacock Theatre Los Angeles</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.04.21</span>
+      <span class="row-title">YOASOBI</span>
+      <span class="row-venue">The Warfield San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.06.08</span>
+      <span class="row-title">ITZY</span>
+      <span class="row-venue">Oakland Arena</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.07.11</span>
+      <span class="row-title">NAOTO</span>
+      <span class="row-venue">名古屋国際会議場</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.07.12–13</span>
+      <span class="row-title">SEKAI NO OWARI</span>
+      <span class="row-venue">名古屋市国際展示場</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.07.14–15</span>
+      <span class="row-title">FANTASTICS</span>
+      <span class="row-venue">幕張メッセ</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.09.08</span>
+      <span class="row-title">(G)I-DLE</span>
+      <span class="row-venue">Oakland Arena</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.10.08</span>
+      <span class="row-title">XG</span>
+      <span class="row-venue">Bill Graham Civic Auditorium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.11.30–12.01</span>
+      <span class="row-title">milet</span>
+      <span class="row-venue">台北流行音樂中心</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.12.10</span>
+      <span class="row-title">Kiss of Life</span>
+      <span class="row-venue">The Warfield</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.03.16</span>
+      <span class="row-title">matsuri'25</span>
+      <span class="row-venue">Peacock Theater</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.03.29</span>
+      <span class="row-title">Mayday</span>
+      <span class="row-venue">Allegiant Stadium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.04.06</span>
+      <span class="row-title">米津玄师</span>
+      <span class="row-venue">Youtube Theater</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.04.15</span>
+      <span class="row-title">羊文学</span>
+      <span class="row-venue">August Hall</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.05.16</span>
+      <span class="row-title">ONE OK ROCK</span>
+      <span class="row-venue">Bill Graham Civic Auditorium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.05.28</span>
+      <span class="row-title">あいみょん</span>
+      <span class="row-venue">さいたまスーパーアリーナ</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.05.29</span>
+      <span class="row-title">SEKAI NO OWARI</span>
+      <span class="row-venue">Zepp Nagoya</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.05.30–06.01</span>
+      <span class="row-title">EXILE</span>
+      <span class="row-venue">ワールド記念ホール</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.07.13</span>
+      <span class="row-title">Ado</span>
+      <span class="row-venue">SAP Center</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.12.26</span>
+      <span class="row-title">UVERworld vs. SEKAI NO OWARI</span>
+      <span class="row-venue">日本武道館</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.12.27–28</span>
+      <span class="row-title">EXILE</span>
+      <span class="row-venue">バンテリンドーム ナゴヤ</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.01.18</span>
+      <span class="row-title">TWICE</span>
+      <span class="row-venue">Oakland Arena</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.02.14</span>
+      <span class="row-title">milet</span>
+      <span class="row-venue">日本武道館</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.05.16</span>
+      <span class="row-title">Zigpangu</span>
+      <span class="row-venue">Rose Bowl</span>
+    </div>
+    </div>
+  </details>
+
+  <details class="log">
+    <summary>
+      <span class="log-meta">剧场<span class="log-count">57</span></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="log-rows">
+      <div class="row">
+      <span class="row-date">2021.08.25</span>
+      <span class="row-title">Hamilton</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2021.11.02</span>
+      <span class="row-title">My Fair Lady</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.04.20</span>
+      <span class="row-title">Rent</span>
+      <span class="row-venue">Carmel-by-the-Sea</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.06.08</span>
+      <span class="row-title">Dear Evan Hansen</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.06.21</span>
+      <span class="row-title">Hadestown</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.07.14</span>
+      <span class="row-title">Come From Away</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.07.17</span>
+      <span class="row-title">Prom</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.08.19</span>
+      <span class="row-title">Lion King</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2022.11.23</span>
+      <span class="row-title">Frozen</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.01.31</span>
+      <span class="row-title">Dear Evan Hansen</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.02.15</span>
+      <span class="row-title">Dear Evan Hansen</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.06.17</span>
+      <span class="row-title">The Book of Mormon</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.06.28</span>
+      <span class="row-title">Parade</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.06.29</span>
+      <span class="row-title">Kimberly Akimbo</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.07.01</span>
+      <span class="row-title">Sleep No More</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.07.01</span>
+      <span class="row-title">Six</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.07.08</span>
+      <span class="row-title">Les Misérables</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.07.13</span>
+      <span class="row-title">Les Misérables</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.09.27</span>
+      <span class="row-title">Hadestown</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.10.21</span>
+      <span class="row-title">Les Misérables</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.11.16</span>
+      <span class="row-title">红与黑</span>
+      <span class="row-venue">上海</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.02.24</span>
+      <span class="row-title">Chicago</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.05.22</span>
+      <span class="row-title">Stereophonic</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.05.23</span>
+      <span class="row-title">Suffs</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.05.27</span>
+      <span class="row-title">Sleep No More</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.06.01</span>
+      <span class="row-title">tick, tick… BOOM!</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.06.06</span>
+      <span class="row-title">The Lehman Trilogy</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.06.16</span>
+      <span class="row-title">The Lehman Trilogy</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.06.22</span>
+      <span class="row-title">Company</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.09.05</span>
+      <span class="row-title">Wicked</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.09.14</span>
+      <span class="row-title">Private Lives</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.11.02</span>
+      <span class="row-title">The Play That Goes Wrong</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.11.23</span>
+      <span class="row-title">Come From Away</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.11.26</span>
+      <span class="row-title">A Whynot Christmas Carol</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.12.07</span>
+      <span class="row-title">Nutcracker</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.12.17</span>
+      <span class="row-title">Hamilton</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.02.03</span>
+      <span class="row-title">Nobody Loves You</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.03.18</span>
+      <span class="row-title">The Cher Show</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.04.16</span>
+      <span class="row-title">Six</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.06.07</span>
+      <span class="row-title">Next to Normal</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.07.05</span>
+      <span class="row-title">&Juliet</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.09.20</span>
+      <span class="row-title">Shucked</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.09.21</span>
+      <span class="row-title">9 to 5</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.01</span>
+      <span class="row-title">Suffs</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.08</span>
+      <span class="row-title">Maybe Happy Ending</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.09</span>
+      <span class="row-title">Hamilton</span>
+      <span class="row-venue">New York</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.15</span>
+      <span class="row-title">Stereophonic</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.29</span>
+      <span class="row-title">Kinky Boots</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.02.28</span>
+      <span class="row-title">The Notebook</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.02.28</span>
+      <span class="row-title">All Things Equal</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.03.07</span>
+      <span class="row-title">Paranormal Activity</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.03.14</span>
+      <span class="row-title">SPAMALOT</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.03.14</span>
+      <span class="row-title">||:GIRLS:||:CHANCE:||:MUSIC:||</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.03.24</span>
+      <span class="row-title">Primary Trust</span>
+      <span class="row-venue">Palo Alto</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.05.02</span>
+      <span class="row-title">HAMNET</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.05.13</span>
+      <span class="row-title">Hell's Kitchen</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.05.30</span>
+      <span class="row-title">Mean Girls</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+    </div>
+  </details>
+
+  <details class="log">
+    <summary>
+      <span class="log-meta">喜剧<span class="log-count">8</span></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="log-rows">
+      <div class="row">
+      <span class="row-date">2022.01.21</span>
+      <span class="row-title">Ronny Chieng</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.05.11</span>
+      <span class="row-title">Taylor Tomlinson</span>
+      <span class="row-venue">Oakland</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.10.10</span>
+      <span class="row-title">德云社</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2023.12.16</span>
+      <span class="row-title">Ali Wong</span>
+      <span class="row-venue">San Francisco</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.05.11</span>
+      <span class="row-title">Daniel Sloss</span>
+      <span class="row-venue">Santa Rosa</span>
+    </div>
+<div class="row">
+      <span class="row-date">2024.10.18</span>
+      <span class="row-title">Ronny Chieng</span>
+      <span class="row-venue">San Jose</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.09.13</span>
+      <span class="row-title">Taylor Tomlinson</span>
+      <span class="row-venue">Oakland</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.11.08</span>
+      <span class="row-title">Daniel Sloss</span>
+      <span class="row-venue">New York</span>
+    </div>
+    </div>
+  </details>
+
+  <details class="log">
+    <summary>
+      <span class="log-meta">棒球<span class="log-count">8</span></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="log-rows">
+      <div class="row">
+      <span class="row-date">2025.04.30</span>
+      <span class="row-title">Marlins @ Dodgers</span>
+      <span class="row-venue">Dodger Stadium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.06.19</span>
+      <span class="row-title">Padres @ Dodgers</span>
+      <span class="row-venue">Dodger Stadium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.07.13</span>
+      <span class="row-title">Dodgers @ Giants</span>
+      <span class="row-venue">Oracle Park</span>
+    </div>
+<div class="row">
+      <span class="row-date">2025.09.14</span>
+      <span class="row-title">Dodgers @ Giants</span>
+      <span class="row-venue">Oracle Park</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.04.13</span>
+      <span class="row-title">Mets @ Dodgers</span>
+      <span class="row-venue">UNIQLO Field at Dodger Stadium</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.04.21</span>
+      <span class="row-title">Dodgers @ Giants</span>
+      <span class="row-venue">Oracle Park</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.04.22</span>
+      <span class="row-title">Dodgers @ Giants</span>
+      <span class="row-venue">Oracle Park</span>
+    </div>
+<div class="row">
+      <span class="row-date">2026.05.17</span>
+      <span class="row-title">Dodgers @ Angels</span>
+      <span class="row-venue">Angel Stadium</span>
+    </div>
+    </div>
+  </details>
+
+  <!-- ACG -->
+  <div class="section-head"><h2 class="cjk">🦄 二次元是精神家园</h2></div>
+  <div class="posters">
+    <div class="poster">
+      <img src="../images/acg-saezuru.jpg" alt="鸣鸟不飞" >
+      <span class="poster-label">鸣鸟不飞</span>
+    </div>
+<div class="poster">
+      <img src="../images/acg-frieren.jpg" alt="葬送的芙莉莲" >
+      <span class="poster-label">葬送的芙莉莲</span>
+    </div>
+<div class="poster">
+      <img src="../images/acg-ikoku.jpg" alt="他国日记" >
+      <span class="poster-label">他国日记</span>
+    </div>
+<div class="poster">
+      <img src="../images/acg-furuba.jpg" alt="水果篮子" >
+      <span class="poster-label">水果篮子</span>
+    </div>
+<div class="poster">
+      <img src="../images/acg-heated-rivalry.jpg" alt="Heated Rivalry" >
+      <span class="poster-label">Heated Rivalry</span>
+    </div>
+<div class="poster">
+      <img src="../images/acg-heartstopper.jpg" alt="Heartstopper" >
+      <span class="poster-label">Heartstopper</span>
+    </div>
+  </div>
+
+  <!-- CREATIVE -->
+  <div class="section-head"><h2 class="cjk">🍻 创作是魔法</h2></div>
+  <div class="section-sub">世界树 / 原创</div>
+  <div class="posters" style="grid-template-columns: 1fr 1fr; margin-bottom:12px;">
+    <div class="poster">
+      <img src="../images/creative-story.jpg" alt="普通故事" >
+      <span class="poster-label">普通故事</span>
+    </div>
+<div class="poster">
+      <img src="../images/creative-space.jpg" alt="度量空间" >
+      <span class="poster-label">度量空间</span>
+    </div>
+  </div>
+  <a class="ticket-link" href="https://www.yimiwriting.com/" target="_blank" rel="noopener">
+      <span class="tl-code">EN</span>
+      <span class="tl-body">
+        <span class="tl-name">英文原创作品</span>
+        <span class="tl-desc">大多是短文喔</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+  <a class="ticket-link" href="https://archiveofourown.org/users/1mether/works" target="_blank" rel="noopener">
+      <span class="tl-code">AO3</span>
+      <span class="tl-body">
+        <span class="tl-name">AO3</span>
+        <span class="tl-desc">同人无差别堆放场！</span>
+      </span>
+      <span class="tl-arrow">→</span>
+    </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>感谢你对我有兴趣！希望可以和你做朋友！</p>
+    <span class="stamp">Made with Love</span>
+  </div>
+
+</div>
+</body>
+</html>
