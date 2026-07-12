@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>乙醚 · 项目</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Quicksand:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+body {
+  min-height: 100vh;
+}
+
+/* ---------- back link ---------- */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--blue);
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: color 0.15s;
+}
+.back:hover { color: var(--coral); }
+
+/* ---------- project card extras ---------- */
+.tl-code.code-reading {
+  background: linear-gradient(135deg, #8FAE94, #7C93B8);
+}
+.tl-code.code-stargazer {
+  background: linear-gradient(135deg, #B89BC2, #E0916D);
+}
+
+/* ---------- tech tags ---------- */
+.tags {
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.tags span {
+  font-family:'DM Mono', monospace;
+  font-size:10.5px;
+  background: var(--card-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- BACK -->
+  <a class="back" href="../links/">
+    <span>&larr;</span>
+    <span>back to links</span>
+  </a>
+
+  <!-- HERO TICKET -->
+  <div class="hero">
+    <div class="hero-top">
+      <span>&#x1f527; 项目</span>
+      <span>NO. 1METHER</span>
+    </div>
+    <div class="hero-main">
+      <div class="avatar">
+        <img src="../images/avatar.jpg" alt="乙醚">
+      </div>
+      <div class="hero-id">
+        <div class="name">项目</div>
+        <div class="role">SIDE PROJECTS · 业余作品</div>
+      </div>
+    </div>
+    <div class="tear"></div>
+    <div class="hero-bio">
+      <p>这里是我闲暇时间的小项目，主要是自己用的工具。</p>
+    </div>
+  </div>
+
+  <div class="barcode">
+    <span>&middot;</span><span>&#x2726;</span><span>&middot;</span><span>&#x2727;</span><span>&middot;</span><span>&#x2726;</span><span>&middot;</span>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section-head"><h2 class="cjk">&#x1f4da; 我的项目</h2></div>
+  <div class="section-sub">麻雀虽小，自己够用</div>
+
+  <!-- Reading -->
+  <a class="ticket-link" href="https://reading.1mether.me/" target="_blank" rel="noopener">
+      <span class="tl-code code-reading">RD</span>
+      <span class="tl-body">
+        <span class="tl-name">Reading</span>
+        <span class="tl-desc">阅读书架，记录读过的书，追踪阅读轨迹</span>
+        <span class="tags">
+          <span>NeoDB</span>
+          <span>阅读</span>
+        </span>
+      </span>
+      <span class="tl-arrow">&rarr;</span>
+    </a>
+
+  <!-- Stargazer Interpreter -->
+  <a class="ticket-link" href="https://stargazer-interpreter.1mether.me/" target="_blank" rel="noopener">
+      <span class="tl-code code-stargazer">SG</span>
+      <span class="tl-body">
+        <span class="tl-name">Stargazer Interpreter</span>
+        <span class="tl-desc">Lenormand 牌阵解读工具，从星图到文字</span>
+        <span class="tags">
+          <span>Lenormand</span>
+          <span>占卜</span>
+        </span>
+      </span>
+      <span class="tl-arrow">&rarr;</span>
+    </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>还有更多想法在路上 &hellip;</p>
+    <span class="stamp">Made with Love</span>
+  </div>
+
+</div>
+</body>
+</html>
