@@ -127,48 +127,6 @@ details[open] .chev { transform: rotate(90deg); }
 .row-title { font-weight:600; flex:1; min-width:0; color: var(--ink); }
 .row-venue { color: var(--muted); font-size:12.5px; text-align:right; flex-shrink:0; }
 
-/* ---------- posters ---------- */
-.posters {
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:12px;
-}
-.poster {
-  border-radius:16px;
-  overflow:hidden;
-  position:relative;
-  aspect-ratio: 1 / 1;
-  background: var(--card);
-  border:2px solid var(--line);
-}
-.poster img { width:100%; height:100%; object-fit:cover; display:block; }
-.poster-label {
-  position:absolute; left:0; right:0; bottom:0;
-  background: linear-gradient(to top, rgba(30,20,35,0.82), transparent);
-  color:#fff;
-  font-size:11.5px;
-  padding: 18px 8px 8px 8px;
-  font-weight:600;
-}
-.poster-placeholder {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px;
-  text-align:center;
-}
-.poster-placeholder .poster-label {
-  background:none;
-  position:static;
-  padding:0;
-  color: inherit;
-}
-.poster-placeholder-title { display:none; }
-.poster-placeholder.tone-blue { background: linear-gradient(155deg, #E4EAF3, #D6DFEE); }
-.poster-placeholder.tone-coral { background: linear-gradient(155deg, #F6E4DA, #F0D4C4); }
-.poster-placeholder.tone-sage { background: linear-gradient(155deg, #E6EEE4, #D8E4D5); }
-.poster-placeholder .poster-label { color: var(--ink); }
-
 @media (max-width:420px) {
   .badges { grid-template-columns: 1fr; }
   .row-venue { display:none; }
@@ -847,44 +805,60 @@ details[open] .chev { transform: rotate(90deg); }
 
   <!-- ACG -->
   <div class="section-head"><h2 class="cjk">🦄 二次元是精神家园</h2></div>
-  <div class="posters">
-    <div class="poster">
-      <img src="../images/acg-saezuru.jpg" alt="鸣鸟不飞" >
-      <span class="poster-label">鸣鸟不飞</span>
+  <div class="badges">
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-saezuru.jpg" alt="鸣鸟不飞">
+      <span class="badge-text">
+        <span class="badge-group">鸣鸟不飞</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/acg-frieren.jpg" alt="葬送的芙莉莲" >
-      <span class="poster-label">葬送的芙莉莲</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-frieren.jpg" alt="葬送的芙莉莲">
+      <span class="badge-text">
+        <span class="badge-group">葬送的芙莉莲</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/acg-ikoku.jpg" alt="他国日记" >
-      <span class="poster-label">他国日记</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-ikoku.jpg" alt="他国日记">
+      <span class="badge-text">
+        <span class="badge-group">他国日记</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/acg-furuba.jpg" alt="水果篮子" >
-      <span class="poster-label">水果篮子</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-furuba.jpg" alt="水果篮子">
+      <span class="badge-text">
+        <span class="badge-group">水果篮子</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/acg-heated-rivalry.jpg" alt="Heated Rivalry" >
-      <span class="poster-label">Heated Rivalry</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-heated-rivalry.jpg" alt="Heated Rivalry">
+      <span class="badge-text">
+        <span class="badge-group">Heated Rivalry</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/acg-heartstopper.jpg" alt="Heartstopper" >
-      <span class="poster-label">Heartstopper</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/acg-heartstopper.jpg" alt="Heartstopper">
+      <span class="badge-text">
+        <span class="badge-group">Heartstopper</span>
+      </span>
     </div>
   </div>
 
   <!-- CREATIVE -->
   <div class="section-head"><h2 class="cjk">🍻 创作是魔法</h2></div>
   <div class="section-sub">世界树 / 原创</div>
-  <div class="posters" style="grid-template-columns: 1fr 1fr; margin-bottom:12px;">
-    <div class="poster">
-      <img src="../images/creative-story.jpg" alt="普通故事" >
-      <span class="poster-label">普通故事</span>
+  <div class="badges" style="margin-bottom:12px;">
+    <div class="badge">
+      <img class="badge-photo" src="../images/creative-story.jpg" alt="普通故事">
+      <span class="badge-text">
+        <span class="badge-group">普通故事</span>
+      </span>
     </div>
-<div class="poster">
-      <img src="../images/creative-space.jpg" alt="度量空间" >
-      <span class="poster-label">度量空间</span>
+    <div class="badge">
+      <img class="badge-photo" src="../images/creative-space.jpg" alt="度量空间">
+      <span class="badge-text">
+        <span class="badge-group">度量空间</span>
+      </span>
     </div>
   </div>
   <a class="ticket-link" href="https://www.yimiwriting.com/" target="_blank" rel="noopener">

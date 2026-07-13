@@ -14,28 +14,6 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- back link ---------- */
-.back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
-  color: var(--blue);
-  text-decoration: none;
-  margin-bottom: 30px;
-  transition: color 0.15s;
-}
-.back:hover { color: var(--coral); }
-
-/* ---------- project card extras ---------- */
-.tl-code.code-reading {
-  background: linear-gradient(135deg, #8FAE94, #7C93B8);
-}
-.tl-code.code-stargazer {
-  background: linear-gradient(135deg, #B89BC2, #E0916D);
-}
-
 /* ---------- tech tags ---------- */
 .tags {
   display:flex;
@@ -57,12 +35,6 @@ body {
 <body>
 <div class="wrap">
 
-  <!-- BACK -->
-  <a class="back" href="../links/">
-    <span>&larr;</span>
-    <span>back to links</span>
-  </a>
-
   <!-- HERO TICKET -->
   <div class="hero">
     <div class="hero-top">
@@ -74,7 +46,7 @@ body {
         <img src="../images/avatar.jpg" alt="乙醚">
       </div>
       <div class="hero-id">
-        <div class="name">项目</div>
+        <div class="name">乙醚</div>
         <div class="role">SIDE PROJECTS · 业余作品</div>
       </div>
     </div>
@@ -92,12 +64,24 @@ body {
   <div class="section-head"><h2 class="cjk">&#x1f4da; 我的项目</h2></div>
   <div class="section-sub">麻雀虽小，自己够用</div>
 
-  <!-- Reading -->
-  <a class="ticket-link" href="https://reading.1mether.me/" target="_blank" rel="noopener">
-      <span class="tl-code code-reading">RD</span>
+  <!-- Blog -->
+  <a class="ticket-link" href="https://blog.1mether.me/" target="_blank" rel="noopener">
       <span class="tl-body">
-        <span class="tl-name">Reading</span>
-        <span class="tl-desc">阅读书架，记录读过的书，追踪阅读轨迹</span>
+        <span class="tl-name">一立方米</span>
+        <span class="tl-desc">个人博客，虽然长草了但偶尔也写写</span>
+        <span class="tags">
+          <span>写作</span>
+          <span>技术</span>
+        </span>
+      </span>
+      <span class="tl-arrow">&rarr;</span>
+    </a>
+
+  <!-- Reading — NeoDB 阅读书架 -->
+  <a class="ticket-link" href="https://reading.1mether.me/" target="_blank" rel="noopener">
+      <span class="tl-body">
+        <span class="tl-name">乙椟</span>
+        <span class="tl-desc">NeoDB 阅读书架，记录读过的书，追踪阅读轨迹</span>
         <span class="tags">
           <span>NeoDB</span>
           <span>阅读</span>
@@ -106,9 +90,8 @@ body {
       <span class="tl-arrow">&rarr;</span>
     </a>
 
-  <!-- Stargazer Interpreter -->
+  <!-- Stargazer Interpreter — Lenormand 牌阵解读 -->
   <a class="ticket-link" href="https://stargazer-interpreter.1mether.me/" target="_blank" rel="noopener">
-      <span class="tl-code code-stargazer">SG</span>
       <span class="tl-body">
         <span class="tl-name">Stargazer Interpreter</span>
         <span class="tl-desc">Lenormand 牌阵解读工具，从星图到文字</span>
